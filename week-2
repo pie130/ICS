@@ -39,6 +39,7 @@ pip install pycryptodome
 nano exploit.py
 
 python exploit.py
+ls
 
 cat private.pem
 openssl pkeyutl -decrypt -in enc.txt -out dec.txt -inkey private.pem
