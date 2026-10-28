@@ -1,0 +1,30 @@
+Step 1:
+Connect the router to the desktop using a LAN cable. Connect the cable to the appropriate LAN port of the router and the Ethernet port of the desktop. Also, connect the router's power adapter and switch it on.
+Step 2:
+After successfully connecting the router, reset the router if required. Open a web browser and enter the router's IP address 192.168.0.1 in a new tab. Enter the administrator password, confirm the administrator password, then click Get Started.
+Step 3:
+Select the appropriate Time Zone, such as Chennai, Kolkata, Mumbai, and New Delhi, and click Next.
+Step 4:
+Select Static IP as the Connection Type and click Next.
+Step 5:
+Enter the IP address details according to the local LAN configuration:
+•	IP Address: 172.16.46.37
+•	Subnet Mask: 255.255.0.0
+•	Default Gateway: 172.16.15.254
+•	Primary DNS: 8.8.8.8
+•	Secondary DNS: 8.8.8.8
+Click Next.
+Note: To find the IP address on a Windows system, go to Control Panel → Network and Internet → Network and Sharing Center → Change Adapter Settings. Right-click Ethernet, select Properties, choose Internet Protocol Version 4 (TCP/IPv4), and view the IP configuration.
+Step 6:
+Personalize the Wireless Settings or use the default settings.
+Select Smart Connection and enter the following details:
+•	Network Name (SSID): CSD
+•	Password: 123456789
+Click Next.
+Step 7:
+Select Skip and click Next.
+Step 8:
+Verify all the configured details and click Next. If prompted, select Skip to continue.
+Step 9:
+Go to Advanced → Security → Access Control. Enable the Blacklist option and click Add. Select the network device that you want to block and add it to the blacklist.
+To allow a previously blocked device, remove the device from the Blacklist.
