@@ -1,0 +1,43 @@
+cd /var/www/html
+ls
+# Go to Google and search for DVWA GitHub
+# Click Code → Copy URL
+
+sudo git clone <PASTE_GITHUB_URL_HERE>
+# Password: kali
+
+ls
+sudo mv DVWA dvwa
+sudo chmod -R 777 dvwa
+ls
+cd dvwa
+ls
+cd config
+ls
+sudo cp config.inc.php.dist config.inc.php
+ls
+sudo nano config.inc.php
+cat config.inc.php
+
+sudo service mariadb start
+sudo mysql -u root -p
+# Password: kali
+
+CREATE DATABASE dvwa;
+
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'password';
+
+grant on all dvwa.* to admin@localhost';
+
+EXIT;
+cd/etc/php/8.4/apache2
+ls
+sudo nano php.ini
+sudo service apache2 start
+
+
+cd /etc/php/8.4/apache2
+ls
+sudo nano php.ini
+
+sudo service apache2 start
