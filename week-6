@@ -1,0 +1,18 @@
+ifconfig
+ip config
+ping IP_address
+
+sudo iptables -A INPUT -s IP_address -j DROP
+
+ping IP_address
+
+sudo iptables -D INPUT -s IP_address -j DROP
+
+ping IP_address
+
+sudo service apache2 start
+sudo service mysql start
+
+sudo iptables -A INPUT -s IP_address -p tcp --destination-port 80 -j DROP
+
+Change -A to -D
