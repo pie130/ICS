@@ -1,0 +1,46 @@
+cd Desktop
+cd rsa
+ls
+cat pubkey.pem
+cat enc.txt
+openssl rsa -pubin -inform PEM -text -noout < pubkey.pem
+nano exploit.py
+
+from Crypto.PublicKey import RSA
+from Crypto.Util.number import inverse
+import base64
+
+n = 18819881292060796383869723946165043980716356337941738270076335642298885971523466548531906
+
+p = 3980750864240646937397125500550386491199064362342526708406385189575946388957261768583317
+
+q = 47277214610743530253622307197304822463291469530209711645985217113052071125636590397527
+
+e = 65537
+
+phi = (p-1)*(q-1)
+d = inverse(e, phi)
+
+key = RSA.construct((n, e, d, p, q))
+
+fn = "private.pem"
+
+with open(fn, "wb") as f:
+    f.write(key.exportKey())
+
+
+
+python3 -m venv crypto
+
+source crypto/bin/activate
+
+pip install pycryptodome
+
+nano exploit.py
+
+python exploit.py
+
+cat private.pem
+openssl pkeyutl -decrypt -in enc.txt -out dec.txt -inkey private.pem
+
+cat dec.txt
