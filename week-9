@@ -49,6 +49,7 @@ Password:-5gr3ss9hvvc68mT66
 ls
 cd Desktop
 ls
+cat cap.pcapng
 cat s3cr3t.txt
 nano s3cr3t.txt
 Successfully Done Analyze and Exploit the target root system of VulnerableOS. 
